@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test1</title>
+   
+
+</head>
+<body>
+    <select id="catName" name="id">
+        @foreach (var i in ViewBag.Category)
+        {
+
+            <option value="@i.Id">@i.CategoryName</option>
+        }
+
+
+
+    </select>
+    <div class="prodiv">
+        <select id="pro" name="ProductId">
+            @foreach (var i in ViewBag.Product)
+            {
+
+                <option value="@i.Id">@i.ProductName</option>
+            }
+
+        </select>
+    </div>
+
+     @*<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+    <script>
+        $("#catName").change(function () {
+            console.log($(this).val());
+            $.ajax({
+                url: "/Products/UserTasks",
+                type: "post",
+                data: "id=" + $(this).val(),
+                success: function (result) {
+
+
+                    if (result.length > 0) {
+                        $(".prodiv").show();
+                    }
+                    else {
+                        $(".prodiv").hide()
+                    }
+
+                    for (var i = 0; i < result.length; i++) {
+                        console.log(result[i].Title)
+                    }
+
+                    $(".prodiv").html(" ");
+
+                    $.each(result, function (key, task) {
+                        //var newRow = '<select "class="select-' + task.Id +'" name="ProductId"></select><option value="'+task.Id+'">'+task.
+                        console.log(task.Id);
+                        console.log(task.Title);
+                        console.log(task.Description);
+                        console.log(task.DeadLine);
+                        console.log(task.ProductName);
+
+
+
+                    })
+
+                }
+
+            })
+        })
+    </script>*@
+
+</body>
+</html>

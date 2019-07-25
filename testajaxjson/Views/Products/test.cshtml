@@ -1,0 +1,27 @@
+﻿@{
+        ViewBag.Title = "test";
+    }
+
+    <h2>test</h2>
+
+    <select id="catName" name="id">
+        @foreach (var i in ViewBag.Category)
+        {
+
+            <option  data-id="@i.Id" value="@i.Id">@i.CategoryName</option>
+        }
+
+
+
+    </select>
+    <div class="prodiv">
+        <select id="pro" name="ProductId">
+            @foreach (var i in ViewBag.Product)
+            {
+
+                <option value="@i.Id">@i.ProductName</option>
+            }
+
+        </select>
+    </div>
+   
